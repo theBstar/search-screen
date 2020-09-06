@@ -1,6 +1,6 @@
 import React from 'react';
-import Text from 'Components/Text';
-import InitialIllustration from 'Assets/search_doctor_empty_state.png';
+import Text from '../../../../components/Text'
+import InitialIllustration from '../../../../assets/search_doctor_empty_state.png'
 
 
 function Initial() {

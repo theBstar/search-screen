@@ -40,6 +40,12 @@
   }
 }
 
+.pb {
+  &--10 {
+    padding-bottom: calc(10 * #{$spacing-scale});
+  }
+}
+
 ._block {
   display: flex;
 }
@@ -55,18 +61,10 @@
 
 ._fluid {
   width: 100%;
-  height: 100%;
+  flex-grow: 1;
 }
 
 .block  {
-  &--centered {
-    @extend ._block;
-    @extend ._centered;
-    &--fluid {
-      @extend ._fluid;
-      overflow: hidden;
-    }
-  }
   &--vertical {
     &--centered {
       @extend ._block;
@@ -77,21 +75,12 @@
         @extend ._vertical;
         @extend ._centered;
         @extend ._fluid;
-        overflow: hidden;
-        &--flow {
-          @extend ._block;
-          @extend ._vertical;
-          @extend ._centered;
-          @extend ._fluid;
-          overflow: auto;
-        }
       }
     }
     &--fluid {
       @extend ._block;
       @extend ._vertical;
       @extend ._fluid;
-      overflow: hidden;
     }
   }
 }

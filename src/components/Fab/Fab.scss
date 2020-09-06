@@ -2,22 +2,11 @@
 @import '../../Styles/base/button';
 
 .fab {
-  &__overlay {
-    position: absolute;
-    top: calc(100% + #{0.25 * $spacing-scale});
-    left: 0;
-    width: 100%;
-    height: calc(#{3 * $spacing-scale});
-    opacity: 0.7;
-    background: #f1f7f7;
-    user-select: none;
-    pointer-events: none;
-  }
   &__button {
     @extend .button;
-    position: absolute;
+    position: fixed;
     bottom: calc(#{4 * $spacing-scale});
-    width: calc(100% - #{2 * $spacing-scale});
+    width: calc(#{$max-width} - #{2 * $spacing-scale});
     color: $primary-alternate;
     padding: calc(#{$spacing-scale} * 1.5);
     background: $primary-color;

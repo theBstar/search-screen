@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ErrorPage from '../ErrorPage';
 import Initial from '../Initial';
 import Loader from '../Loader';
 import NoResults from '../NoResults';
-import Fab from 'Components/Fab';
-import DoctorCard from 'Components/DoctorCard/DoctorCard';
+import Fab from '../../../../components/Fab'
+import DoctorCard from '../../../../components/DoctorCard';
 
 
 function Results({
@@ -12,6 +12,8 @@ function Results({
   onConnect
 }) {
   const [selectedDoctors, setSelectedDoctors] = useState([]);
+  useEffect(() => { setSelectedDoctors([]); }, [results]);
+
   if (results.status === 'error') return <ErrorPage />;
   if (results.status === 'initial') return <Initial />;
   if (results.status === 'loading') return <Loader />;
@@ -20,7 +22,7 @@ function Results({
   return (
     <>
       <div
-        className="block--vertical--centered--fluid--flow pt--2"
+        className={`block--vertical--centered--fluid mt--1 ${results.doctors.length ? 'pb--10' : ''}`}
       >
         {results.doctors.map(item => (
           <DoctorCard

@@ -1,8 +1,8 @@
 import React from 'react';
-import BackButton from 'Components/BackButton';
-import Text from 'Components/Text';
-import SearchInput from 'Components/SearchInput/SearchInput';
-import useDebouncedValue from 'Hooks/useDebouncedValue';
+import BackButton from '../../components/BackButton';
+import Text from '../../components/Text';
+import SearchInput from '../../components/SearchInput';
+import useDebouncedValue from '../../hooks/useDebouncedValue';
 import Results from './components/Results';
 import useDoctorSearchData from './hooks/useDoctorSearchData';
 
@@ -11,7 +11,7 @@ function SearchDoctor() {
   const { doctorData, submitDoctorData, updateDoctorDataOnSearch } = useDoctorSearchData();
   const [searchTerm, updateSearchTerm] = useDebouncedValue(
     "",
-    500,
+    300,
     updateDoctorDataOnSearch,
   );
 

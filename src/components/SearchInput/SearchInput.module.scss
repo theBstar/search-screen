@@ -26,7 +26,7 @@
     width: 100%;
     border-radius: $border-radius;
     background-color: $primary-background;
-    background-image: url('../../Assets/search_icon.png');
+    background-image: url('../../assets/search_icon.png');
     background-position: calc(100% - #{1.5 * $spacing-scale}) 50%; 
     background-repeat: no-repeat;
     box-shadow: $primary-box-shadow;

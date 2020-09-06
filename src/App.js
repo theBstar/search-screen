@@ -1,10 +1,10 @@
 import React from 'react';
-import SearchDoctor from 'Screens/SearchDoctor';
-import styles from './App.module.scss';
+import SearchDoctor from './screens/SearchDoctor';
+import './App.scss';
 
 function App() {
   return (
-    <div className={styles.app}>
+    <div className="app">
       <SearchDoctor />
     </div>
   );
