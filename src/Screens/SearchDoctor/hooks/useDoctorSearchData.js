@@ -14,7 +14,6 @@ function useDoctorSearchData() {
 
   const updateDoctorDataOnSearch = useCallback(
     async (searchTerm) => {
-      console.log('updated term ', searchTerm);
       if (searchTerm.length) {
         setDoctorData({
           status: 'loading',
@@ -23,7 +22,7 @@ function useDoctorSearchData() {
 
         try {
           const data = await axios.get(`/?search=${searchTerm}`);
-          const doctors = data.data.results.map(({name}, id) => ({
+          const doctors = data.data.results.map(({ name }, id) => ({
             id,
             username: `@dr.${name.toLowerCase()}`,
             name: `Dr.${name}`,
@@ -47,7 +46,7 @@ function useDoctorSearchData() {
 
   const submitDoctorData = useCallback(
     (data) => {
-      console.log('submitting doctor data ', data);
+      alert("Sending data to api.. Well, I don't have an API endpoint yet!");
     },
     [],
   );

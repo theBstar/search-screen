@@ -1,11 +1,11 @@
 import React from 'react';
 import './DoctorCard.scss';
+import Checkbox from '../Checkbox';
 
-function DoctorCard({ data, checkboxTrackerProps }) {
+function DoctorCard({ data, onCheckboxClick, checkboxValue }) {
   return (
     <div className="card">
       <div className="avatar">
-        {/* <img src={data.userAvatar} alt="User Profile" /> */}
       </div>
       <div className="content">
         <div className="primary-text">
@@ -16,9 +16,7 @@ function DoctorCard({ data, checkboxTrackerProps }) {
         </div>
       </div>
       <div className="action">
-        <div {...checkboxTrackerProps}>
-          Checkbox
-        </div>
+        <Checkbox onClick={onCheckboxClick} vlaue={checkboxValue} />
       </div>
     </div>
   )

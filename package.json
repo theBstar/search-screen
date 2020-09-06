@@ -17,8 +17,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "test:ci": "CI=true react-scripts test env=jsdom --passWithNoTests",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint --fix src/**/*.js",
+    "lint":  "./node_modules/.bin/eslint src/**/*.{js,jsx}",
+    "lint:fix": "./node_modules/.bin/eslint --fix src/**/*.{js,jsx}",
     "test:all": "npm run lint && npm run test:ci",
     "eject": "react-scripts eject"
   },
