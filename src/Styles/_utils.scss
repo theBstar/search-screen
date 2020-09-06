@@ -8,9 +8,32 @@
   &--1 {
     margin-top: $spacing-scale;
   }
+  &--one-and-half {
+    margin-top: calc(2 * #{$spacing-scale});
+  }
   &--2 {
     margin-top: calc(2 * #{$spacing-scale});
   }
+  &--3 {
+    margin-top: calc(3 * #{$spacing-scale});
+  }
+  &--4 {
+    margin-top: calc(4 * #{$spacing-scale});
+  }
+}
+
+.pd {
+  &--1 {
+    padding: $spacing-scale;
+  }
+  &--one-and-half {
+    padding: calc(1.5 * #{$spacing-scale});
+  }
+}
+
+
+._block {
+  display: flex;
 }
 
 ._centered {
@@ -18,24 +41,39 @@
   justify-content: center;
 }
 
-._block {
-  display: flex;
-}
-
 ._vertical {
   flex-direction: column;
+}
+
+._fluid {
+  width: 100%;
+  height: 100%;
 }
 
 .block  {
   &--centered {
     @extend ._block;
     @extend ._centered;
+    &--fluid {
+      @extend ._fluid;
+    }
   }
   &--vertical {
     &--centered {
       @extend ._block;
       @extend ._vertical;
       @extend ._centered;
+      &--fluid {
+        @extend ._block;
+        @extend ._vertical;
+        @extend ._centered;
+        @extend ._fluid;
+      }
+    }
+    &--fluid {
+      @extend ._block;
+      @extend ._vertical;
+      @extend ._fluid;
     }
   }
 }

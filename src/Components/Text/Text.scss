@@ -4,9 +4,15 @@
   &--big {
     font-size: $font-big;
     font-weight: bold;
+    &--centered {
+      text-align: center;
+    }
   }
   &--small {
     font-size: $font-small;
     font-weight: normal;
+    &--centered {
+      text-align: center;
+    }
   }
 }

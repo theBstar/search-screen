@@ -3,7 +3,7 @@ import styles from './SearchInput.module.scss';
 
 function SearchInput({ value, onChange }) {
   return (
-    <div>
+    <div className={styles.div}>
       <label htmlFor="searchInput" className={styles.srOnlyLabel}>
         Enter text to search for doctors
       </label>

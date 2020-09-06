@@ -1,7 +1,7 @@
 @import '../../Styles/variables';
 @import '../../Styles/utils';
 
-div {
+.div {
   width: 100%;
   position: relative;
 }
@@ -16,7 +16,7 @@ div {
 	font-weight:bold;
 	font-size: $spacing-scale;
 	top:calc(50% - #{$spacing-scale * .5});
-  left: 0.5em;
+  left: 1.5em;
   width: 5ch;
 }
 
@@ -32,7 +32,7 @@ div {
     box-shadow: $primary-box-shadow;
     padding: $spacing-scale;
     padding-right: calc(3 * #{$spacing-scale});
-    padding-left: calc(1rem + 4ch);
+    padding-left: calc(1.5rem + 5ch);
   &::placeholder {
     opacity: $fade-opacity;
   }

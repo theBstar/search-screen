@@ -1,7 +1,7 @@
 import React from 'react';
 import './Text.scss';
 
-function Text({ component, text, size, }) {
+function Text({ component, text, size, centered}) {
 
   const InnerComponent = component || 'div';
   let textStyles = '';
@@ -10,11 +10,14 @@ function Text({ component, text, size, }) {
       textStyles = 'text--big';
       break;
     case 'small':
-      textStyles = 'text-small';
+      textStyles = 'text--small';
       break;
     default:
       textStyles = 'noraml';
     }
+  if (centered) {
+    textStyles += '--centered';
+  }
   return (
     <InnerComponent className={textStyles}>
       {text}
