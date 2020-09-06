@@ -1,4 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project supports all of the CRA commands, some of those mentioned at bottom.
+
+
+## About the Project:
+  * Task was to develop an application where user can search for a doctor. [here are the designs](https://app.zeplin.io/project/5f50b4ed6c18ba4af8db5dac/screen/5f50b501d1d57c88310e8941)
+  * The API doesn't provide any avatar, so I am showing a placeholder, also I am mocking out the user-name on the front-end.
+  * All the common reusable components are in components folder
+  * styles folder includes general theme, reset and some global settings. I thought of structuring css with BEM but It would have been more work for me. I went ahead with a hybrid of BEM, SMACSS and atomic architecture.
+  * Debounced search field input, otherwise we would end up hitting our server too many times wihtout any benifit to the user.
+  * Building it with any design system would have been a lot easier, Material-ui is very close to the design.
+  * Tried to replicate the design, focused on the re-usability and extensibility. 
+  * Spent around 7-8 hours time, some of it went into css re-structuring.
+  * I would really appreciate any feedback.
 
 ## Available Scripts
 
@@ -27,42 +40,3 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

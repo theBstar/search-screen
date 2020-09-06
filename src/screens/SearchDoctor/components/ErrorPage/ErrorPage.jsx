@@ -1,9 +1,10 @@
 import React from 'react';
 import Text from '../../../../components/Text';
+import Box from '../../../../components/Box';
 
 function ErrorPage() {
   return (
-    <>
+    <Box vertical centered fluid>
       <Text
         text="Something went wrong"
         size="big"
@@ -15,7 +16,7 @@ function ErrorPage() {
           centered
         />
       </div>
-    </>
+    </Box>
   )
 }
 

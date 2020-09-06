@@ -1,5 +1,5 @@
-@import '../../Styles/variables';
-@import '../../Styles/base/button';
+@import '../../styles/variables';
+@import '../../styles/base/button';
 
 .fab {
   &__button {
@@ -15,5 +15,9 @@
     font-size: calc(#{$spacing-scale} * 1.5);
     box-shadow: $primary-box-shadow;
   }
-  
+  @media (max-width: 300px) {
+    &__button {
+      width: calc(100% - 2rem);
+    }
+  }
 }

@@ -5,12 +5,15 @@ import Loader from '../Loader';
 import NoResults from '../NoResults';
 import Fab from '../../../../components/Fab'
 import DoctorCard from '../../../../components/DoctorCard';
+import Box from '../../../../components/Box';
 
 
 function Results({
   results,
   onConnect
 }) {
+  // stores selected doctors data. 
+  // Everytime results from api is updated the local counter is cleared
   const [selectedDoctors, setSelectedDoctors] = useState([]);
   useEffect(() => { setSelectedDoctors([]); }, [results]);
 
@@ -21,8 +24,10 @@ function Results({
 
   return (
     <>
-      <div
-        className={`block--vertical--centered--fluid mt--1 ${results.doctors.length ? 'pb--10' : ''}`}
+      <Box
+        vertical
+        fluid
+        classes={`mt--1 ${results.doctors.length ? 'pb--10' : ''}`}
       >
         {results.doctors.map(item => (
           <DoctorCard
@@ -43,7 +48,7 @@ function Results({
             checkboxValue={!!selectedDoctors.find(el => el.id === item.id)}
           />
         ))}
-      </div>
+      </Box>
       {!!selectedDoctors.length && (
         <Fab
           title="Connect with doctor"

@@ -1,13 +1,17 @@
 import { useState, useCallback, useMemo } from "react";
 import axios from 'axios';
 
+const { CancelToken, Cancel } = axios;
+
 axios.defaults.baseURL = 'https://swapi.dev/api/people/';
 
-// status can be anything of error, initial, loading, submitting or loaded, submitted
+// status can be anything of error, initial, loading, submitting or loaded
 const initialData = {
   status: 'initial',
   doctors: [],
 };
+
+let axiosCancelToken;
 
 function useDoctorSearchData() {
   const [doctorData, setDoctorData] = useState({ ...initialData });
@@ -21,7 +25,15 @@ function useDoctorSearchData() {
         });
 
         try {
-          const data = await axios.get(`/?search=${searchTerm}`);
+          if (axiosCancelToken) {
+            axiosCancelToken();
+            axiosCancelToken = null;
+          }
+          const data = await axios.get(`/?search=${searchTerm}`, {
+            cancelToken: new CancelToken(e => {
+              axiosCancelToken = e;
+            }),
+          });
           const doctors = data.data.results.map(({ name }, id) => ({
             id,
             username: `@dr.${name.toLowerCase()}`,
@@ -31,11 +43,13 @@ function useDoctorSearchData() {
             status: 'loaded',
             doctors,
           });
-        } catch {
-          setDoctorData({
-            status: 'error',
-            doctors: [],
-          });
+        } catch (e) {
+          if (!(e instanceof Cancel)) {
+            setDoctorData({
+              status: 'error',
+              doctors: [],
+            });
+          }
         }
       } else {
         setDoctorData({ ...initialData });
@@ -44,9 +58,11 @@ function useDoctorSearchData() {
     [],
   );
 
+  // There was no mention of any endpoint for post
+  // However, the api can be hooked in here.
   const submitDoctorData = useCallback(
-    (data) => {
-      alert("Sending data to api.. Well, I don't have an API endpoint yet!");
+    data => {
+      alert("Can send data to api here, but I don't have an endpoint yet!");
     },
     [],
   );

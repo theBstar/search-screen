@@ -1,8 +1,14 @@
 @import '../variables';
 @import '../utils';
 
+/*
+===================================================
+  Base styling for card
+===================================================
+*/
+
 .card {
-  @extend ._block;
+  @extend .block;
   width: 100%;
   height: 80px;
   padding: $spacing-scale * 1.5;
@@ -19,8 +25,8 @@
     background: $secondary-background;
   }
   .content {
-    @extend ._block;
-    @extend ._vertical;
+    @extend .block;
+    @extend .vertical;
     margin-right: calc(#{$spacing-scale * 0.25});
     height: 50px;
     justify-content: space-around;
@@ -32,6 +38,6 @@
     color: inherit;
   }
   .action {
-    @extend ._block;
+    @extend .block;
   }
 }
