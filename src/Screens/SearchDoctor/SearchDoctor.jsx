@@ -3,21 +3,22 @@ import BackButton from 'Components/BackButton';
 import Text from 'Components/Text';
 import SearchInput from 'Components/SearchInput/SearchInput';
 import useDebouncedValue from 'Hooks/useDebouncedValue';
-import InitialScreen from './components/Initial';
+import Results from './components/Results';
+import useDoctorSearchData from './hooks/useDoctorSearchData';
 
 function SearchDoctor() {
-  const [searchValue, handleInputChange] = useDebouncedValue(
+
+  const { doctorData, submitDoctorData, updateDoctorDataOnSearch } = useDoctorSearchData();
+  const [searchTerm, updateSearchTerm] = useDebouncedValue(
     "",
-    200,
-    (text) => {
-      console.log('hello ', text);
-    }
+    500,
+    updateDoctorDataOnSearch,
   );
 
   return (
     <main className="block--vertical--fluid">
       <BackButton />
-      <section className="block--vertical--fluid mt--1">
+      <section className="block--vertical--fluid mt--2">
         <header>
           <Text
             component="h1"
@@ -26,17 +27,14 @@ function SearchDoctor() {
           />
         </header>
         <section className="block--vertical--centered--fluid mt--1">
-          <SearchInput value={searchValue} onChange={handleInputChange} />
+          <SearchInput value={searchTerm} onChange={updateSearchTerm} />
           <div className="block--vertical--fluid mt--1">
-            {!searchValue
-              ? (
-                <div className="block--vertical--centered--fluid mt--1">
-                  <InitialScreen />
-                </div>
-              )
-              : (
-                <div>{searchValue}</div>
-              )}
+            <div className="block--vertical--centered--fluid">
+              <Results
+                results={doctorData}
+                onConnect={submitDoctorData}
+              />
+            </div>
           </div>
         </section>
       </section>

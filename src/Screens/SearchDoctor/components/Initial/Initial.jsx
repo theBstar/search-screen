@@ -3,7 +3,7 @@ import Text from 'Components/Text';
 import InitialIllustration from 'Assets/search_doctor_empty_state.png';
 
 
-function InitialScreen() {
+function Initial() {
   return (
     <>
       <img src={InitialIllustration} alt="Start searching for doctors by entering text" />
@@ -24,4 +24,4 @@ function InitialScreen() {
   )
 }
 
-export default InitialScreen;
+export default Initial;

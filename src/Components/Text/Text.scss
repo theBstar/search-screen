@@ -1,17 +1,26 @@
 @import '../../Styles/variables';
 
+._default {
+  line-height: calc(#{$spacing-scale} * 1.3);
+}
+
 .text {
+  @extend ._default;
   &--big {
     font-size: $font-big;
     font-weight: bold;
+    @extend ._default;
     &--centered {
       text-align: center;
+      @extend ._default;
     }
   }
   &--small {
+    @extend ._default;
     font-size: $font-small;
     font-weight: normal;
     &--centered {
+      @extend ._default;
       text-align: center;
     }
   }
