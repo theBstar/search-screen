@@ -18,17 +18,33 @@
   justify-content: center;
 }
 
-.block  {
+._block {
   display: flex;
+}
+
+._vertical {
+  flex-direction: column;
+}
+
+.block  {
   &--centered {
-    @extend .block;
+    @extend ._block;
     @extend ._centered;
   }
   &--vertical {
-    flex-direction: column;
     &--centered {
-      @extend .block;
+      @extend ._block;
+      @extend ._vertical;
       @extend ._centered;
     }
   }
+}
+
+.sr-only {
+  position:absolute;
+  left:-10000px;
+  top:auto;
+  width:1px;
+  height:1px;
+  overflow:hidden;
 }

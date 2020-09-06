@@ -1,0 +1,39 @@
+@import '../../Styles/variables';
+@import '../../Styles/utils';
+
+div {
+  width: 100%;
+  position: relative;
+}
+
+.srOnlyLabel {
+  @extend .sr-only;
+}
+
+
+.startEndorment {
+	position:absolute;
+	font-weight:bold;
+	font-size: $spacing-scale;
+	top:calc(50% - #{$spacing-scale * .5});
+  left: 0.5em;
+  width: 5ch;
+}
+
+.input {
+    border: none;
+    outline: none;
+    width: 100%;
+    border-radius: $border-radius;
+    background-color: $primary-background;
+    background-image: url('../../Assets/search_icon.png');
+    background-position: calc(100% - #{1.5 * $spacing-scale}) 50%; 
+    background-repeat: no-repeat;
+    box-shadow: $primary-box-shadow;
+    padding: $spacing-scale;
+    padding-right: calc(3 * #{$spacing-scale});
+    padding-left: calc(1rem + 4ch);
+  &::placeholder {
+    opacity: $fade-opacity;
+  }
+}

@@ -7,9 +7,6 @@
   height: 52px;
   width: 52px;
   overflow: hidden;
-  &:hover {
-    box-shadow: $primary-box-shadow;
-  }
   &__label {
     border-radius: 50%;
   }

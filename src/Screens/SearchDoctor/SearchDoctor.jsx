@@ -1,9 +1,17 @@
 import React from 'react';
 import BackButton from 'Components/BackButton';
 import Text from 'Components/Text';
+import SearchInput from 'Components/SearchInput/SearchInput';
+import useDebouncedValue from 'Hooks/useDebouncedValue';
 
 function SearchDoctor() {
-
+  const [searchValue, handleInputChange] = useDebouncedValue(
+    "",
+    200,
+    (text) => {
+      console.log('hello ', text);
+    }
+  );
   return (
     <main>
       <BackButton />
@@ -15,8 +23,11 @@ function SearchDoctor() {
             size="big"
           />
         </header>
-        <section className="block--centered mt--1">
-          Lets see if this works
+        <section className="block--vertical--centered mt--1">
+          <SearchInput value={searchValue} onChange={handleInputChange} />
+          <div className="block--vertical-centered mt--1">
+            {searchValue}
+          </div>
         </section>
 
       </section>
