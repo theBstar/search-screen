@@ -1,0 +1,12 @@
+@import '../../Styles/variables';
+
+.text {
+  &--big {
+    font-size: $font-big;
+    font-weight: bold;
+  }
+  &--small {
+    font-size: $font-small;
+    font-weight: normal;
+  }
+}

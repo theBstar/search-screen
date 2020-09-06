@@ -1,0 +1,15 @@
+/*
+===================================================
+  Global style and font settings
+===================================================
+*/
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  height: 100%;
+}

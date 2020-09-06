@@ -1,0 +1,34 @@
+/*
+===================================================
+  All css util classes
+===================================================
+*/
+
+.mt {
+  &--1 {
+    margin-top: $spacing-scale;
+  }
+  &--2 {
+    margin-top: calc(2 * #{$spacing-scale});
+  }
+}
+
+._centered {
+  align-items: center;
+  justify-content: center;
+}
+
+.block  {
+  display: flex;
+  &--centered {
+    @extend .block;
+    @extend ._centered;
+  }
+  &--vertical {
+    flex-direction: column;
+    &--centered {
+      @extend .block;
+      @extend ._centered;
+    }
+  }
+}

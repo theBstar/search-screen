@@ -1,0 +1,11 @@
+.button {
+  display: inline-block;
+  border: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  &--round {
+    @extend .button;
+    border-radius: 50%;
+  } 
+}
