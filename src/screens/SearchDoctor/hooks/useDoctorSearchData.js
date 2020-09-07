@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const { CancelToken, Cancel } = axios;
 
-axios.defaults.baseURL = 'https://swapi.dev/api/people/';
+axios.defaults.baseURL = '/api/people/';
 
 // status can be anything of error, initial, loading, submitting or loaded
 const initialData = {
