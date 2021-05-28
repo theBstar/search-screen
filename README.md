@@ -5,7 +5,7 @@ This project supports all of the CRA commands, some of those mentioned at bottom
 
 
 ## About the Project:
-  * Task was to develop an application where user can search for a doctor. [here are the designs](https://app.zeplin.io/project/5f50b4ed6c18ba4af8db5dac/screen/5f50b501d1d57c88310e8941)
+  * Task was to develop an application where user can search for a doctor.
   * The API doesn't provide any avatar, so I am showing a placeholder, also I am mocking out the user-name on the front-end.
   * All the common reusable components are in components folder
   * styles folder includes general theme, reset and some global settings. I thought of structuring css with BEM but It would have been more work for me. I went ahead with a hybrid of BEM, SMACSS and atomic architecture.
